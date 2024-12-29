@@ -13,4 +13,6 @@ public interface IWareHouseService {
 	String deleteWareHouse(Long id);
 
 	Optional<WareHouse> findById(Long id);
+
+	WareHouse updateWarehouse(WareHouse wareHouse);
 }

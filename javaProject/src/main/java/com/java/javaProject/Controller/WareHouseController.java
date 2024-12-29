@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.java.javaProject.Entity.Product;
 import com.java.javaProject.Entity.WareHouse;
 import com.java.javaProject.Service.IWareHouseService;
 
@@ -47,7 +46,7 @@ public class WareHouseController {
 		wareHouseService.saveWarehouse(wareHouse);
 		return "redirect:/wareHouses";
 	}
-	
+
     @PostMapping("/delete/{id}")
     public String deleteWareHouse(@PathVariable Long id, Model model) {
         String result = wareHouseService.deleteWareHouse(id);
@@ -61,4 +60,5 @@ public class WareHouseController {
 
         return "redirect:/wareHouses"; 
     }
+
 }

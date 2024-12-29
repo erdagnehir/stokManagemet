@@ -51,4 +51,11 @@ public class WareHouseService implements IWareHouseService {
 		return wareHouseRepository.findById(id);
 	}
 
+	@Override
+	public WareHouse updateWarehouse(WareHouse wareHouse) {
+		if (wareHouse.getId() != null && wareHouseRepository.existsById(wareHouse.getId())) {
+			return wareHouseRepository.save(wareHouse);
+		}
+		throw new IllegalArgumentException("Depo bulunamadı");
+	}
 }
