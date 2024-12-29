@@ -1,4 +1,5 @@
 package com.java.javaProject.Entity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,14 +8,14 @@ import jakarta.persistence.*;
 @Entity
 public class WareHouse {
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private String name;
-    private String location;
-    
-    @OneToMany(mappedBy = "wareHouse", cascade = CascadeType.ALL, orphanRemoval = false)
-    private List<Product> products = new ArrayList<>();
+	private String name;
+	private String location;
+
+	@OneToMany(mappedBy = "wareHouse", cascade = CascadeType.ALL, orphanRemoval = false)
+	private List<Product> products = new ArrayList<>();
 
 	public Long getId() {
 		return id;
