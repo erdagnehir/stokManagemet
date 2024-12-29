@@ -12,9 +12,6 @@ public class Order {
 	@Column(name = "customerName")
 	private String customerName;
 
-	@Column(name = "status")
-	private String status; // Bekliyor, Tamamlandı, İptal
-
 	@JoinColumn(name = "product_id")
 	@ManyToOne
 	private Product product;
@@ -36,14 +33,6 @@ public class Order {
 
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public Product getProduct() {

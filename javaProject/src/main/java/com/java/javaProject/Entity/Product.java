@@ -6,6 +6,7 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(nullable = false)
 	 private String name;
 	 private String description;
@@ -17,8 +18,8 @@ public class Product {
 	 private Integer stock;
 	 
 	 @ManyToOne
-    @JoinColumn(name = "warehouse_id", nullable = false)
-    private WareHouse warehouse;
+	 @JoinColumn(name = "warehouse_id", nullable = false)
+	 private WareHouse wareHouse;
 		
 	public String getDescription() {
 		return description;
@@ -39,10 +40,10 @@ public class Product {
 		this.name = name;
 	}
 	public WareHouse getWarehouse() {
-		return warehouse;
+		return wareHouse;
 	}
 	public void setWarehouse(WareHouse warehouse) {
-		this.warehouse = warehouse;
+		this.wareHouse = warehouse;
 	}
 	public Double getPrice() {
 		return price;

@@ -15,8 +15,10 @@ import java.util.List;
 public class ProductController {
 	@Autowired
 	private IProductService productService;
+	
 	@Autowired
 	private IWareHouseService warehouseService;  
+	
 	@GetMapping
 	public String listProducts(Model model) {
 		List<Product> products = productService.getAllProducts();
@@ -25,8 +27,15 @@ public class ProductController {
 	}   
 	       
 	@PostMapping("/delete/{id}")
-	public String deleteProduct(@PathVariable Long id) {
-		productService.deleteProduct(id);
+	public String deleteProduct(@PathVariable Long id, Model model) {
+		 String result = productService.deleteProduct(id);
+		 if (result != null) {
+			List<Product> products = productService.getAllProducts();
+    		model.addAttribute("products", products);
+            model.addAttribute("errorMessage", result);
+            return "product/list";
+		 }
+		 
 		return "redirect:/products";
 	}
 	
@@ -47,10 +56,10 @@ public class ProductController {
 	    return "product/add";
 	}
 
-
 	@PostMapping("/add")
 	public String saveProduct(@ModelAttribute Product product) {
 	    productService.saveProduct(product);
 	    return "redirect:/products";
 	}
+
 }
