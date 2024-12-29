@@ -105,7 +105,7 @@ Yapılandırma Dosyaları
 
 Kurulum ve Çalıştırma
 
-   Projeyi klonlayın: git clone https://github.com/kullanici/proje-adi.git
+   Projeyi klonlayın: git clone https://github.com/erdagnehir/StokManagementSystem.git
 
 Maven bağımlılıklarını yükleyin: mvn clean install
 
