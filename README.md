@@ -113,4 +113,4 @@ Maven bağımlılıklarını yükleyin: mvn clean install
 
 Uygulamayı başlatın: mvn spring-boot:run
 
-Tarayıcıda şu adrese gidin: http://localhost:8080
+Tarayıcıda şu adrese gidin: http://localhost:8081
